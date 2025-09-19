@@ -146,50 +146,6 @@ Trigger manual synchronization semua environment.
 - **Disk Space:** Monitoring penggunaan disk
 - **Memory Usage:** Monitoring penggunaan memory
 
-### Scheduler Configuration
-**URL:** `/kafka-monitor/scheduler-config`
-
-#### Konfigurasi Scheduler:
-- **Enable/Disable Environment:** Aktifkan/nonaktifkan monitoring per environment
-- **Schedule Times:** Atur waktu sync harian
-- **Update Intervals:** Atur interval update real-time
-- **Notification Settings:** Konfigurasi notifikasi Telegram
-
-#### Toggle Configuration:
-Setiap environment bisa diaktifkan/nonaktifkan secara individual:
-- **Production Enabled:** Monitoring environment production
-- **Staging Enabled:** Monitoring environment staging
-- **Development Enabled:** Monitoring environment development
-
-## Sistem Raft (KafkaRaft)
-
-### Raft Connectors
-**URL:** `/kafka-monitor/raft/connectors`
-
-Sistem terpisah untuk monitoring KafkaRaft connectors dengan fitur serupa seperti Kafka Connect:
-- **Daftar Raft Connectors**
-- **Operasi Individual:** Restart, Pause, Resume
-- **Update Assignments:** Cluster, DBMS, Tim
-
-### Raft Clusters
-**URL:** `/kafka-monitor/raft/clusters`
-Manajemen cluster untuk KafkaRaft connectors.
-
-### Raft Teams
-**URL:** `/kafka-monitor/raft/tims`
-Manajemen tim untuk KafkaRaft connectors.
-
-### Raft Topics
-**URL:** `/kafka-monitor/raft/topiks`
-- **Daftar Raft Topics**
-- **Topic Statistics API:** `/kafka-monitor/raft/api/topiks/stats`
-
-### Raft Failures
-**URL:** `/kafka-monitor/raft/failures`
-- **Monitoring Kegagalan Raft**
-- **Resolve/Unresolve:** Kelola status kegagalan
-- **Failure Statistics API:** `/kafka-monitor/raft/api/failures/stats`
-
 ## Alur Kerja Umum
 
 ### 1. Monitoring Harian
@@ -226,44 +182,5 @@ Manajemen tim untuk KafkaRaft connectors.
 2. **Scheduler Tidak Berjalan:** Periksa system health dan konfigurasi
 3. **Data Tidak Update:** Trigger manual sync atau periksa koneksi network
 4. **Assignment Hilang:** Re-assign connector ke cluster dan tim yang sesuai
-
-## Notifikasi dan Alert
-
-### Telegram Integration:
-- **Failure Alerts:** Notifikasi otomatis ketika connector gagal
-- **Recovery Notifications:** Notifikasi ketika connector kembali normal
-- **Throttled Notifications:** Maksimal 1 notifikasi per jam per connector
-
-### Email Notifications:
-- **Daily Summary:** Ringkasan harian status sistem
-- **Critical Failures:** Alert untuk kegagalan critical connector
-
-## API Endpoints
-
-### Public APIs:
-- **Scheduler Config:** `/kafka-monitor/api/scheduler-config`
-- **Raft Topic Stats:** `/kafka-monitor/raft/api/topiks/stats`
-- **Raft Failure Stats:** `/kafka-monitor/raft/api/failures/stats`
-
-## Keamanan dan Akses
-
-### Authentication:
-Aplikasi menggunakan sistem authentication Laravel standar.
-
-### Authorization:
-- **Admin Access:** Full control semua fitur
-- **User Access:** View-only untuk monitoring
-- **Team Lead Access:** Kelola connector untuk tim tertentu
-
-## Support dan Bantuan
-
-### Dokumentasi Teknis:
-- **CLAUDE.md:** Dokumentasi untuk developer
-- **README.md:** Setup dan konfigurasi aplikasi
-
-### Troubleshooting:
-Untuk masalah teknis, hubungi tim IT atau periksa log aplikasi di `/storage/logs/`.
-
----
 
 *Manual ini akan terus diupdate seiring dengan pengembangan fitur baru aplikasi Kafka Monitor.*
