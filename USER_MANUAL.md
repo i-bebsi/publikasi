@@ -6,12 +6,12 @@ Kafka Monitor adalah aplikasi web untuk memantau dan mengelola Kafka Connect con
 
 ## Akses Aplikasi
 
-Aplikasi dapat diakses melalui URL: `http://localhost/kafka-monitor/`
+Aplikasi dapat diakses melalui URL: `https://saladin-dev.uii.ac.id/kafka-monitor/`
 
 ## Menu Utama
 
 ### 1. Dashboard
-**URL:** `/kafka-monitor/`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/`
 
 Dashboard adalah halaman utama yang menampilkan ringkasan status sistem Kafka Monitor:
 - **Total Connectors:** Jumlah keseluruhan connector yang dipantau
@@ -22,7 +22,7 @@ Dashboard adalah halaman utama yang menampilkan ringkasan status sistem Kafka Mo
 - **Recent Failures:** Daftar kegagalan terbaru yang terjadi
 
 ### 2. Connectors
-**URL:** `/kafka-monitor/connectors`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/connectors`
 
 #### Fitur Utama:
 - **Daftar Semua Connector:** Menampilkan semua connector dari berbagai environment
@@ -38,7 +38,7 @@ Dashboard adalah halaman utama yang menampilkan ringkasan status sistem Kafka Mo
 #### Operasi Individual Connector:
 
 ##### Melihat Detail Connector
-**URL:** `/kafka-monitor/connectors/{nama-connector}`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/connectors/{nama-connector}`
 - Informasi lengkap konfigurasi connector
 - Status tasks individual
 - Topic yang digunakan
@@ -46,7 +46,7 @@ Dashboard adalah halaman utama yang menampilkan ringkasan status sistem Kafka Mo
 - Riwayat perubahan status
 
 ##### Edit Connector
-**URL:** `/kafka-monitor/connectors/{nama-connector}/edit`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/connectors/{nama-connector}/edit`
 - Update assignment cluster
 - Update assignment tim
 - Update informasi DBMS
@@ -65,11 +65,11 @@ Dashboard adalah halaman utama yang menampilkan ringkasan status sistem Kafka Mo
 - **Update Tim:** Assign connector ke tim pengelola
 
 #### Fetch Connectors
-**URL:** `/kafka-monitor/connectors/fetch` (POST)
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/connectors/fetch` (POST)
 Manual synchronization connector dari Kafka Connect server ke database lokal.
 
 ### 3. Failures (Kegagalan Connector)
-**URL:** `/kafka-monitor/failures`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/failures`
 
 #### Monitoring Kegagalan:
 - **Daftar Kegagalan:** Semua connector yang mengalami kegagalan
@@ -78,7 +78,7 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 - **Environment Tracking:** Environment tempat kegagalan terjadi
 
 #### Detail Kegagalan
-**URL:** `/kafka-monitor/failures/{failure-id}`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/failures/{failure-id}`
 - Informasi lengkap connector yang gagal
 - Pesan error detail
 - Riwayat kegagalan
@@ -89,7 +89,7 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 - **Auto Resolution:** Sistem otomatis menandai resolved ketika connector kembali normal
 
 ### 4. Clusters
-**URL:** `/kafka-monitor/clusters`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/clusters`
 
 #### Manajemen Cluster Bisnis:
 - **Create Cluster:** Buat cluster bisnis baru
@@ -103,7 +103,7 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 - **Tim Pengelola:** Tim yang bertanggung jawab terhadap cluster
 
 ### 5. Tim
-**URL:** `/kafka-monitor/tim`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/tim`
 
 #### Manajemen Tim:
 - **Create Tim:** Buat tim baru
@@ -117,7 +117,7 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 - **Default Assignment:** Connector auto-discovered assigned ke tim "Lainnya"
 
 ### 6. Topics
-**URL:** `/kafka-monitor/topics`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/topics`
 
 #### Monitoring Kafka Topics:
 - **Daftar Topics:** Semua topic yang digunakan connector
@@ -127,7 +127,7 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 ## Sistem Scheduler
 
 ### Scheduler Status
-**URL:** `/kafka-monitor/scheduler`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/scheduler`
 
 #### Monitoring Scheduler:
 - **Status Aktif:** Scheduler sedang berjalan atau tidak
@@ -136,11 +136,11 @@ Manual synchronization connector dari Kafka Connect server ke database lokal.
 - **Health Check:** Status kesehatan sistem monitoring
 
 #### Manual Sync
-**URL:** `/kafka-monitor/scheduler/sync` (POST)
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/scheduler/sync` (POST)
 Trigger manual synchronization semua environment.
 
 #### System Health
-**URL:** `/kafka-monitor/scheduler/health`
+**URL:** `https://saladin-dev.uii.ac.id/kafka-monitor/scheduler/health`
 - **Database Connection:** Status koneksi database
 - **Kafka Connect APIs:** Status koneksi ke semua environment
 - **Disk Space:** Monitoring penggunaan disk
