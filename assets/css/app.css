@@ -364,16 +364,16 @@ h4, h5, h6 {
 }
 
 .alert-info {
-  background-color: rgba(13, 110, 253, 0.15);
-  border-color: #0d6efd;
-  color: #084298;
+  background-color: cornflowerblue;
+  border-color: rgba(13, 110, 253, 0.15);
+  color: whitesmoke;
   font-weight: 500;
 }
 
 .alert-success {
-  background-color: rgba(40, 167, 69, 0.15);
-  border-color: var(--color-success);
-  color: #0f5132;
+  background-color: var(--color-success);
+  border-color: rgba(40, 167, 69, 0.15);
+  color: whitesmoke;
   font-weight: 500;
 }
 
